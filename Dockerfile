@@ -4,7 +4,7 @@ ENV GOPROXY "https://goproxy.cn"
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 #Install GO and Tailscale DERPER
-RUN apk add go
+RUN apk add go --repository=https://mirrors.aliyun.com/alpine/edge/community
 RUN go install tailscale.com/cmd/derper@main
 
 FROM alpine:latest
